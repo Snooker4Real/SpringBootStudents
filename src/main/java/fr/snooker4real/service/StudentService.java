@@ -1,8 +1,10 @@
 package fr.snooker4real.service;
 
+import fr.snooker4real.dao.FakeStudentDaoImpl;
 import fr.snooker4real.dao.StudentDao;
 import fr.snooker4real.entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -11,6 +13,7 @@ import java.util.Collection;
 public class StudentService {
 
     @Autowired
+    @Qualifier("mongoData")
     private StudentDao studentDao;
 
     public Collection<Student> getAllStudents(){
